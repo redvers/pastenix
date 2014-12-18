@@ -23,6 +23,9 @@ defmodule Pastenix.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, "~> 0.7.2"},
+     {:amnesia, git: "https://github.com/meh/amnesia.git"},
+     {:timex, "~> 0.13.2"},
+     {:uuid, "~> 0.1.5"},
      {:ex_doc, "~> 0.6", only: :docs},
      {:inch_ex, "~> 0.2", only: :docs},
      {:cowboy, "~> 1.0"}]
