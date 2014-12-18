@@ -9,6 +9,7 @@ defmodule Mix.Tasks.Install do
     Amnesia.Schema.destroy
     IO.puts("Creating new schema")
     Amnesia.Schema.create
+    Amnesia.start
     IO.puts("Writing new schema to disk")
     PasteDB.Paste.create(disk: [node])
     IO.puts("Waiting for disk completion")
