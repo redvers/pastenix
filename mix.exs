@@ -23,6 +23,8 @@ defmodule Pastenix.Mixfile do
   # Type `mix help deps` for examples and options
   defp deps do
     [{:phoenix, "~> 0.7.2"},
+     {:ex_doc, "~> 0.6", only: :docs},
+     {:inch_ex, "~> 0.2", only: :docs},
      {:cowboy, "~> 1.0"}]
   end
 end
