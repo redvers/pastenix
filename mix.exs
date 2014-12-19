@@ -15,7 +15,7 @@ defmodule Pastenix.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Pastenix, []},
-     applications: [:phoenix, :cowboy, :logger]]
+     applications: [:phoenix, :cowboy, :logger, :amnesia]]
   end
 
   # Specifies your project dependencies

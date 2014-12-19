@@ -1,2 +1,2 @@
 Pastenix.Endpoint.start
-ExUnit.start
+ExUnit.start()
