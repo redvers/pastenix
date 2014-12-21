@@ -21,8 +21,8 @@ defmodule Pastenix.Paste do
   """
   def create(record) do
     uuid = UUID.uuid1
+    modified_record = %{record | id: uuid} |> IO.inspect
     Amnesia.transaction do
-      modified_record = %{record | id: uuid}
       PasteDB.Paste.write(modified_record)
     end
     uuid
@@ -46,8 +46,8 @@ defmodule Pastenix.Paste do
   the new record.
   """
   def edit(record) do
-    originalid = record.id
-    uuid = UUID.uuid1
+    originalid = record.id |> IO.inspect
+    uuid = UUID.uuid1 |> IO.inspect
     %{record | id: uuid, previous_version: originalid}
     |> create
   end

@@ -4,6 +4,6 @@ defmodule Pastenix.PageController do
   plug :action
 
   def index(conn, _params) do
-    render conn, "index.html"
+    redirect conn, to: "/paste/"
   end
 end

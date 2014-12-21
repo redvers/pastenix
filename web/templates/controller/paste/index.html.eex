@@ -1,0 +1,12 @@
+  <form method="post">
+    Paste Title: <input name="title"><br>
+    Paste Permissions: <input type="radio" name="permissions" value="public" checked="checked">Public
+    <input type="radio" name="permissions" value="private">Private<br>
+    Publish to irc: <input type="radio" name="irc" value="yup">Yup
+    <input type="radio" name="irc" value="nope" checked="checked">Nope
+    <br>
+    <textarea class="form-control" rows=24 name="pastetext"></textarea>
+    <input type="submit" value="Paste!">
+  </form>
+</div>
+

@@ -4,28 +4,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Pastenix Elixir IRC">
+    <meta name="author" content="Redvers Davies">
 
-    <title>Hello Phoenix!</title>
-    <link rel="stylesheet" href="/css/phoenix.css">
+    <title>Pastenix - Pastebin, Elixir and IRC!</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
   </head>
 
   <body>
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-        </ul>
-        <span class="logo"></span>
-      </div>
+    <div class="container-fluid">
+    <div class="col-md-12">
+    <h1>Pastenix</h1>
+    <p>Simple Pastebin written in Elixir with an Mnesia backend.  Will drop a comment in the irc channel
+ of your choice if you wish...</p>
+    <%= @inner %>
 
-      <%= @inner %>
-
-      <div class="footer">
-        <p><a href="http://phoenixframework.org">phoenixframework.org</a></p>
-      </div>
-
-    </div> <!-- /container -->
+  </div> <!-- /container -->
   </body>
 </html>
+~
