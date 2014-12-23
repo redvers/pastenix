@@ -5,7 +5,7 @@
     Publish to irc: <input type="radio" name="irc" value="yup">Yup
     <input type="radio" name="irc" value="nope" checked="checked">Nope
     <br>
-    <textarea class="form-control" rows=24 name="pastetext"></textarea>
+    <textarea class="form-control" rows=24 name="pastetext" style="font-family:monospace;"></textarea>
     <input type="submit" value="Paste!">
   </form>
 </div>

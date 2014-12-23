@@ -18,9 +18,19 @@
     <h1>Pastenix</h1>
     <p>Simple Pastebin written in Elixir with an Mnesia backend.  Will drop a comment in the irc channel
  of your choice if you wish...</p>
+    </dev>
+    <div class="col-md-9">
     <%= @inner %>
 
+    <div class="col-md-3">
+      <h2>Previous Pastes</h2>
+      <ul>
+      <%= for key <- @lastpastes do %>
+        <li><a href="/paste/<%= key.id %>"><%= key.title %></a><br>
+        <%= Timex.Date.from(key.date, :secs) |> Timex.DateFormat.format!("{RFC1123}") %>
+      <% end %>
+      </ul>
+    </div>
   </div> <!-- /container -->
   </body>
 </html>
-~

@@ -4,7 +4,8 @@ defmodule Pastenix.Controller.Paste do
   plug :action
              
   def index(conn, _params) do
-    render conn, "index.html"
+    lastpastes = Pastenix.Paste.fetchPublicMeta(10)
+    render conn, "index.html", %{lastpastes: lastpastes}
   end
 
   def create(conn, %{"pastetext" => content, "title" => title, "permissions" => perms}) do
@@ -13,8 +14,9 @@ defmodule Pastenix.Controller.Paste do
   end
 
   def fetch(conn, %{"id" => id}) do
+    lastpastes = Pastenix.Paste.fetchPublicMeta(10)
     pasterecord = Pastenix.Paste.fetch(id)
-    render conn, "show.html", %{paste: pasterecord}
+    render conn, "show.html", %{paste: pasterecord, lastpastes: lastpastes}
   end
 
   def edit(conn, %{"id" => id, "pastetext" => content, "title" => title, "permissions" => perms}) do

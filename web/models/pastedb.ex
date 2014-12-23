@@ -6,6 +6,8 @@ defdatabase PasteDB do
 end
 
 defmodule Pastenix.Paste do
+  require PasteDB.Paste
+  require Exquisite
   @moduledoc """
   Pastenix.Paste is the module that provides the Interface to the back-end
   Mnesia database.  The abstraction is provided so:
@@ -52,6 +54,14 @@ defmodule Pastenix.Paste do
     |> create
   end
     
+  #deftable Paste, [ :id, :title, :public, :ircchannels, :date, :expires, :previous_version, :content], type: :ordered_set do end
+  def fetchPublicMeta(count) do
+    PasteDB.Paste.where!(public == true, select: {date, id, title})
+    |> Amnesia.Selection.values
+    |> Enum.sort(fn {a,_,_}, {b,_,_} -> a >= b end)
+    |> Enum.take(count)
+    |> Enum.map(fn {a,b,c} -> %{date: a, id: b, title: c} end)
+  end
 ## Change Permissions
 ## Query Public Pastes
 

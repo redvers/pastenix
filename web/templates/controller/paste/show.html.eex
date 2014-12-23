@@ -1,6 +1,6 @@
   <form method="post">
     Paste Title: <input name="title" value="<%= @paste.title %>">
-    <textarea class="form-control" rows=24 name="pastetext"><%= @paste.content %></textarea>
+    <textarea class="form-control" rows=24 name="pastetext" style="font-family:monospace;"><%= @paste.content %></textarea>
     <input type="submit" value="Submit changes to PasteID: <%= @paste.id %>">
     <input type="hidden" name="id" value="<%= @paste.id %>">
     <%= if (@paste.public == true) do %>
